@@ -1,9 +1,14 @@
 {
   "name": "@selim-ui/react",
-  "version": "0.0.0",
+  "version": "0.1.0-canary.0",
   "private": false,
   "description": "SELIM UI React components",
-  "keywords": ["ui", "react", "components", "design system"],
+  "keywords": [
+    "ui",
+    "react",
+    "components",
+    "design system"
+  ],
   "license": "MIT",
   "sideEffects": [
     "./dist/styles.css",
@@ -20,7 +25,11 @@
     },
     "./styles.css": "./styles.css"
   },
-  "files": ["dist", "styles.css", "README.md"],
+  "files": [
+    "dist",
+    "styles.css",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsup",
     "clean": "rimraf dist",
