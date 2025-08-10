@@ -1,0 +1,8 @@
+@import '../../tokens.css';
+
+.su-card { border: 1px solid var(--su-color-border); border-radius: var(--su-radius-lg); background: linear-gradient(180deg, var(--su-color-surface), color-mix(in oklab, var(--su-color-surface) 86%, transparent)); color: var(--su-color-foreground); overflow: hidden; box-shadow: var(--su-shadow-md); }
+.su-card__header { padding: var(--su-spacing-4); border-bottom: 1px solid color-mix(in oklab, var(--su-color-foreground) 12%, transparent); }
+.su-card__title { font-size: 1rem; font-weight: 600; }
+.su-card__desc { opacity: 0.8; margin-top: var(--su-spacing-2); }
+.su-card__content { padding: var(--su-spacing-4); }
+.su-card__footer { padding: var(--su-spacing-4); border-top: 1px solid color-mix(in oklab, var(--su-color-foreground) 12%, transparent); display: flex; justify-content: flex-end; gap: var(--su-spacing-2); }

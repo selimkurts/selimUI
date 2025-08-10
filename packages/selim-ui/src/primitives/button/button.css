@@ -1,0 +1,64 @@
+/* stylelint-disable */
+@import '../../tokens.css';
+
+.su-btn {
+  font-family: var(--su-font-sans);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--su-spacing-2);
+  border-radius: var(--su-radius-md);
+  border: 1px solid var(--su-color-border);
+  padding: 0 var(--su-spacing-5);
+  line-height: 1;
+  box-shadow: var(--su-shadow-sm);
+  backdrop-filter: saturate(120%) blur(2px);
+  transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease, box-shadow 150ms ease, transform 60ms ease;
+}
+
+.su-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* sizes */
+.su-btn--sm { height: 32px; font-size: 0.875rem; }
+.su-btn--md { height: 40px; font-size: 0.95rem; }
+.su-btn--lg { height: 48px; font-size: 1rem; }
+
+.su-btn__icon { display: inline-flex; align-items: center; }
+.su-btn__icon--left { margin-right: 8px; }
+.su-btn__icon--right { margin-left: 8px; }
+
+/* variants */
+.su-btn--solid {
+  background: linear-gradient(180deg, color-mix(in oklab, var(--su-color-primary) 96%, transparent), var(--su-color-primary));
+  color: var(--su-color-primary-foreground);
+  border-color: color-mix(in oklab, var(--su-color-primary) 40%, var(--su-color-border));
+}
+.su-btn--solid:hover { background: var(--su-color-primary-hover); box-shadow: var(--su-shadow-md); }
+
+.su-btn--outline {
+  background: var(--su-color-surface);
+  color: var(--su-color-primary);
+  border-color: color-mix(in oklab, var(--su-color-primary) 40%, var(--su-color-border));
+}
+.su-btn--outline:hover { background: color-mix(in oklab, var(--su-color-primary) 10%, var(--su-color-surface)); box-shadow: var(--su-shadow-md); }
+
+.su-btn--ghost {
+  background: transparent;
+  color: var(--su-color-foreground);
+  border-color: transparent;
+}
+.su-btn--ghost:hover { background: color-mix(in oklab, var(--su-color-foreground) 8%, transparent); }
+
+.su-btn--link {
+  background: transparent;
+  color: var(--su-color-primary);
+  padding-left: 0;
+  padding-right: 0;
+  border-color: transparent;
+  text-decoration: underline;
+}

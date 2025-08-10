@@ -1,0 +1,6 @@
+@import '../../tokens.css';
+
+.su-acc { display: grid; gap: 8px; }
+.su-acc__item { border: 1px solid var(--su-color-border); border-radius: var(--su-radius-md); background: var(--su-color-surface); }
+.su-acc__trigger { width: 100%; text-align: left; padding: 10px 12px; font-weight: 600; }
+.su-acc__content { padding: 10px 12px; border-top: 1px solid var(--su-color-border); }

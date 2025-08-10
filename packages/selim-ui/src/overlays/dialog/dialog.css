@@ -1,0 +1,17 @@
+@import '../../tokens.css';
+
+.su-dialog { position: fixed; inset: 0; z-index: 50; }
+.su-dialog__backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.5); }
+.su-dialog__panel {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: min(560px, calc(100% - 24px));
+  background: var(--su-color-background);
+  color: var(--su-color-foreground);
+  border: 1px solid color-mix(in oklab, var(--su-color-foreground) 20%, transparent);
+  border-radius: var(--su-radius-lg);
+  padding: var(--su-spacing-4);
+  box-shadow: 0 24px 96px rgba(0,0,0,0.45);
+}
+.su-dialog__title { font-size: 1.125rem; margin-bottom: var(--su-spacing-2); }
+.su-dialog__desc { opacity: 0.8; margin-bottom: var(--su-spacing-4); }
+.su-dialog__footer { display: flex; justify-content: flex-end; margin-top: var(--su-spacing-4); }

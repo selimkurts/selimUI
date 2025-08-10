@@ -1,0 +1,5 @@
+@import '../../tokens.css';
+
+.su-col { border: 1px solid var(--su-color-border); border-radius: var(--su-radius-md); background: var(--su-color-surface); }
+.su-col__trigger { width: 100%; text-align: left; padding: 10px 12px; font-weight: 600; }
+.su-col__content { padding: 10px 12px; border-top: 1px solid var(--su-color-border); }

@@ -1,0 +1,57 @@
+:root {
+  /* colors */
+  --su-color-background: #0c0d10;
+  --su-color-foreground: #eaecf1;
+  --su-color-surface: #111318;
+  --su-color-border: #24262c;
+  --su-color-muted-foreground: #a1a8b3;
+
+  --su-color-primary: #4f46e5;
+  --su-color-primary-hover: #4338ca;
+  --su-color-primary-foreground: #ffffff;
+
+  /* radius */
+  --su-radius-sm: 6px;
+  --su-radius-md: 10px;
+  --su-radius-lg: 14px;
+
+  /* spacing */
+  --su-spacing-1: 0.25rem;
+  --su-spacing-2: 0.5rem;
+  --su-spacing-3: 0.75rem;
+  --su-spacing-4: 1rem;
+  --su-spacing-5: 1.25rem;
+  --su-spacing-6: 1.5rem;
+
+  /* shadow & ring */
+  --su-shadow-sm: 0 1px 2px rgba(0,0,0,0.2), 0 1px 1px rgba(0,0,0,0.08);
+  --su-shadow-md: 0 8px 24px rgba(0,0,0,0.28);
+  --su-ring: 0 0 0 3px color-mix(in oklab, var(--su-color-primary) 30%, transparent);
+
+  /* typography */
+  --su-font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --su-color-background: #ffffff;
+    --su-color-foreground: #0f172a;
+    --su-color-surface: #f9fafb;
+    --su-color-border: #e5e7eb;
+    --su-color-muted-foreground: #6b7280;
+
+    --su-color-primary: #2563eb;
+    --su-color-primary-hover: #1d4ed8;
+    --su-color-primary-foreground: #ffffff;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,12 @@
+node_modules
+dist
+.turbo
+.next
+.DS_Store
+coverage
+*.log
+*.tsbuildinfo
+.eslintcache
+.pnpm-store
+.idea
+.vscode

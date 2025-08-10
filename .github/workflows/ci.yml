@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - run: pnpm -v
+      - run: pnpm install --frozen-lockfile=false
+      - run: pnpm -r run build
+      - name: Unit tests (@selim-ui/react)
+        run: pnpm -F @selim-ui/react run test
+      - name: Install Playwright Browsers
+        run: pnpm -F ./apps/docs exec playwright install --with-deps
+      - name: Build docs and run e2e (Next start + wait-on)
+        run: pnpm -F ./apps/docs run build && pnpm -F ./apps/docs run start -p 3100 & npx --yes wait-on http://127.0.0.1:3100 && pnpm -F ./apps/docs run test:e2e

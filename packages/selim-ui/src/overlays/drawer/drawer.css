@@ -1,0 +1,9 @@
+@import '../../tokens.css';
+
+.su-drawer { position: fixed; inset: 0; z-index: 50; }
+.su-drawer__backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.5); }
+.su-drawer__panel { position: absolute; background: var(--su-color-background); color: var(--su-color-foreground); width: min(480px, 92vw); height: 100%; padding: var(--su-spacing-4); box-shadow: 0 24px 96px rgba(0,0,0,0.45); }
+.su-drawer__panel--right { right: 0; top: 0; }
+.su-drawer__panel--left { left: 0; top: 0; }
+.su-drawer__panel--top { top: 0; left: 0; width: 100%; height: min(60vh, 480px); }
+.su-drawer__panel--bottom { bottom: 0; left: 0; width: 100%; height: min(60vh, 480px); }

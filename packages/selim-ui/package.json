@@ -1,0 +1,61 @@
+{
+  "name": "@selim-ui/react",
+  "version": "0.0.0",
+  "private": false,
+  "description": "SELIM UI React components",
+  "keywords": ["ui", "react", "components", "design system"],
+  "license": "MIT",
+  "sideEffects": [
+    "./dist/styles.css",
+    "./styles.css"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./styles.css": "./styles.css"
+  },
+  "files": ["dist", "styles.css", "README.md"],
+  "scripts": {
+    "build": "tsup",
+    "clean": "rimraf dist",
+    "dev": "tsup --watch",
+    "lint": "eslint \"src/**/*.{ts,tsx}\"",
+    "test": "vitest run --config vitest.config.ts",
+    "size": "pnpm run build && size-limit"
+  },
+  "peerDependencies": {
+    "react": ">=18.2.0",
+    "react-dom": ">=18.2.0"
+  },
+  "dependencies": {
+    "@selim-ui/icons": "workspace:*"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.5.0",
+    "@testing-library/dom": "^10.0.0",
+    "@testing-library/react": "^16.0.0",
+    "jsdom": "^24.1.0",
+    "@size-limit/preset-small-lib": "^11.1.4",
+    "size-limit": "^11.1.4",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "rimraf": "^5.0.5",
+    "tsup": "^7.2.0",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5"
+  },
+  "size-limit": [
+    {
+      "path": "dist/index.mjs",
+      "limit": "30 kB"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+@import '../../tokens.css';
+
+.su-badge { display: inline-flex; align-items: center; gap: 6px; border-radius: 999px; padding: 4px 10px; font-size: 12px; line-height: 1; border: 1px solid transparent; box-shadow: var(--su-shadow-sm); }
+.su-badge--sm { padding: 1px 6px; font-size: 11px; }
+.su-badge--md { padding: 2px 8px; font-size: 12px; }
+.su-badge--neutral { background: var(--su-color-surface); color: var(--su-color-foreground); border-color: var(--su-color-border); }
+.su-badge--primary { background: var(--su-color-primary); color: var(--su-color-primary-foreground); border-color: var(--su-color-primary); }
+.su-badge--success { background: #16a34a; color: #fff; border-color: #16a34a; }
+.su-badge--warning { background: #f59e0b; color: #1a1506; border-color: #f59e0b; }
+.su-badge--danger { background: #ef4444; color: #fff; border-color: #ef4444; }

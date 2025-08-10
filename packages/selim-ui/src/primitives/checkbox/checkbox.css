@@ -1,0 +1,16 @@
+@import '../../tokens.css';
+
+.su-checkbox { display: inline-flex; gap: var(--su-spacing-2); align-items: center; cursor: pointer; }
+.su-checkbox__input { position: absolute; opacity: 0; width: 0; height: 0; }
+.su-checkbox__box {
+  width: 18px; height: 18px; border-radius: 6px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid var(--su-color-border);
+  background: var(--su-color-surface);
+  box-shadow: var(--su-shadow-sm);
+  transition: background-color 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
+}
+.su-checkbox__input:checked + .su-checkbox__box { background: var(--su-color-primary); border-color: var(--su-color-primary); }
+.su-checkbox__input:indeterminate + .su-checkbox__box { background: var(--su-color-primary); border-color: var(--su-color-primary); }
+.su-checkbox__input:focus-visible + .su-checkbox__box { box-shadow: var(--su-ring); }
+.su-checkbox__label { user-select: none; }

@@ -1,0 +1,15 @@
+@import '../../tokens.css';
+
+.su-tooltip { position: relative; display: inline-flex; }
+.su-tooltip__content {
+  position: absolute; left: 50%; bottom: calc(100% + 8px);
+  transform: translateX(-50%);
+  background: var(--su-color-foreground);
+  color: var(--su-color-background);
+  border-radius: 8px;
+  font-size: 12px; line-height: 1; padding: 8px 10px; white-space: nowrap;
+  box-shadow: var(--su-shadow-md);
+  opacity: 0; pointer-events: none; transition: opacity 150ms ease, transform 150ms ease;
+}
+.su-tooltip:hover .su-tooltip__content,
+.su-tooltip:focus-within .su-tooltip__content { opacity: 1; transform: translateX(-50%) translateY(-2px); }

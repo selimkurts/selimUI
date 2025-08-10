@@ -1,0 +1,4 @@
+@import '../../tokens.css';
+
+.su-progress { width: 100%; height: 8px; background: color-mix(in oklab, var(--su-color-foreground) 12%, transparent); border-radius: 999px; overflow: hidden; }
+.su-progress__bar { height: 100%; background: var(--su-color-primary); }

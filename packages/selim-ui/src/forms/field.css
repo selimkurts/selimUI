@@ -1,0 +1,4 @@
+.su-field { display: grid; gap: 6px; }
+.su-field__label { font-size: 0.85rem; opacity: 0.85; }
+.su-field__desc { font-size: 0.8rem; opacity: 0.7; }
+.su-field__error { font-size: 0.8rem; color: #ef4444; }
