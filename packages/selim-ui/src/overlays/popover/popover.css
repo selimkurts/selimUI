@@ -1,0 +1,12 @@
+@import '../../tokens.css';
+
+.su-popover { position: relative; display: inline-block; }
+.su-popover__trigger { all: unset; cursor: pointer; }
+.su-popover__content {
+  position: absolute; top: calc(100% + 8px); left: 0;
+  background: color-mix(in oklab, var(--su-color-foreground) 96%, transparent);
+  color: var(--su-color-background);
+  border-radius: var(--su-radius-md);
+  min-width: 200px; padding: var(--su-spacing-3);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+}

@@ -1,0 +1,7 @@
+@import '../../tokens.css';
+
+.su-textarea { width: 100%; min-height: 96px; background: var(--su-color-surface); color: var(--su-color-foreground); border: 1px solid var(--su-color-border); border-radius: var(--su-radius-md); padding: var(--su-spacing-4); box-shadow: var(--su-shadow-sm); transition: border-color 150ms ease, box-shadow 150ms ease; resize: vertical; }
+.su-textarea:focus { outline: none; border-color: var(--su-color-primary); box-shadow: var(--su-ring); }
+.su-textarea--sm { min-height: 72px; font-size: 0.875rem; }
+.su-textarea--md { min-height: 96px; font-size: 0.95rem; }
+.su-textarea--lg { min-height: 128px; font-size: 1rem; }

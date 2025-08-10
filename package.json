@@ -1,0 +1,42 @@
+{
+  "name": "selimui",
+  "private": true,
+  "packageManager": "pnpm@9.0.0",
+  "scripts": {
+    "build": "pnpm -r --filter ./packages/* run build",
+    "dev": "pnpm -r --filter @selim-ui/* run dev",
+    "dev:lib": "pnpm -F @selim-ui/react run dev",
+    "dev:icons": "pnpm -F @selim-ui/icons run dev",
+    "dev:cli": "pnpm -F selimui run dev",
+    "dev:docs": "pnpm -F ./apps/docs run dev",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "pnpm -r --filter ./packages/* publish --access public",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "eslint --fix"
+    ],
+    "*.{ts,tsx,js,jsx,css,md,mdx,json}": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.9",
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.0",
+    "@typescript-eslint/eslint-plugin": "^8.6.0",
+    "@typescript-eslint/parser": "^8.6.0",
+    "eslint": "^9.8.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "prettier": "^3.3.3",
+    "tsup": "^7.2.0",
+    "typescript": "^5.5.4"
+  }
+}

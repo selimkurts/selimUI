@@ -1,0 +1,17 @@
+@import '../../tokens.css';
+
+.su-radio { display: inline-flex; gap: var(--su-spacing-2); align-items: center; cursor: pointer; }
+.su-radio__input { position: absolute; opacity: 0; width: 0; height: 0; }
+.su-radio__box {
+  width: 18px; height: 18px; border-radius: 999px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid color-mix(in oklab, var(--su-color-foreground) 25%, transparent);
+  background: transparent;
+  transition: background-color 120ms linear, border-color 120ms linear, box-shadow 120ms linear;
+  position: relative;
+}
+.su-radio__box::after { content: ''; width: 10px; height: 10px; border-radius: 999px; background: var(--su-color-primary-foreground); transform: scale(0); transition: transform 120ms ease; position: absolute; }
+.su-radio__input:checked + .su-radio__box { background: var(--su-color-primary); border-color: var(--su-color-primary); }
+.su-radio__input:checked + .su-radio__box::after { transform: scale(1); }
+.su-radio__input:focus-visible + .su-radio__box { box-shadow: 0 0 0 3px color-mix(in oklab, var(--su-color-primary) 25%, transparent); }
+.su-radio__label { user-select: none; }

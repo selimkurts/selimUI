@@ -1,0 +1,7 @@
+@import '../../tokens.css';
+
+@keyframes su-spin { to { transform: rotate(360deg); } }
+.su-spinner { border-radius: 50%; border: 3px solid color-mix(in oklab, var(--su-color-foreground) 16%, transparent); border-top-color: var(--su-color-primary); animation: su-spin 1s linear infinite; }
+.su-spinner--sm { width: 16px; height: 16px; border-width: 2px; }
+.su-spinner--md { width: 24px; height: 24px; }
+.su-spinner--lg { width: 36px; height: 36px; border-width: 4px; }

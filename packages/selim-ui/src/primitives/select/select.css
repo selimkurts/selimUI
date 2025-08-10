@@ -1,0 +1,9 @@
+@import '../../tokens.css';
+
+.su-select__root { position: relative; display: inline-block; }
+.su-select { appearance: none; background: var(--su-color-surface); color: var(--su-color-foreground); border: 1px solid var(--su-color-border); border-radius: var(--su-radius-md); padding: 0 var(--su-spacing-8) 0 var(--su-spacing-4); box-shadow: var(--su-shadow-sm); }
+.su-select:focus { outline: none; border-color: var(--su-color-primary); box-shadow: 0 0 0 3px color-mix(in oklab, var(--su-color-primary) 25%, transparent); }
+.su-select--sm { height: 32px; font-size: 0.875rem; }
+.su-select--md { height: 40px; font-size: 0.95rem; }
+.su-select--lg { height: 48px; font-size: 1rem; }
+.su-select__icon { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); pointer-events: none; color: var(--su-color-muted-foreground); }

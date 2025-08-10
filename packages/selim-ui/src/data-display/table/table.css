@@ -1,0 +1,7 @@
+@import '../../tokens.css';
+
+.su-table { width: 100%; border-collapse: separate; border-spacing: 0; }
+.su-thead .su-th { text-align: left; font-weight: 600; padding: 10px 12px; border-bottom: 1px solid color-mix(in oklab, var(--su-color-foreground) 16%, transparent); }
+.su-tbody .su-td { padding: 10px 12px; border-bottom: 1px solid color-mix(in oklab, var(--su-color-foreground) 10%, transparent); }
+.su-tr:hover .su-td { background: color-mix(in oklab, var(--su-color-foreground) 6%, transparent); }
+.su-th, .su-td { color: var(--su-color-foreground); }

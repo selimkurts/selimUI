@@ -1,0 +1,6 @@
+@import '../../tokens.css';
+
+.su-tabs__list { display: inline-flex; gap: 6px; padding: 4px; background: var(--su-color-surface); border: 1px solid var(--su-color-border); border-radius: var(--su-radius-lg); }
+.su-tabs__trigger { padding: 8px 12px; border-radius: 10px; border: 1px solid transparent; background: transparent; color: var(--su-color-muted-foreground); }
+.su-tabs__trigger.is-active { background: var(--su-color-background); color: var(--su-color-foreground); border-color: var(--su-color-border); box-shadow: var(--su-shadow-sm); }
+.su-tabs__panel { margin-top: 12px; }

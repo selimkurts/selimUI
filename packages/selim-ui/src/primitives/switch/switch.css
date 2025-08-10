@@ -1,0 +1,18 @@
+@import '../../tokens.css';
+
+.su-switch { display: inline-flex; gap: var(--su-spacing-2); align-items: center; cursor: pointer; }
+.su-switch__input { position: absolute; opacity: 0; width: 0; height: 0; }
+.su-switch__track {
+  width: 44px; height: 24px; border-radius: 999px; position: relative;
+  background: var(--su-color-border);
+  transition: background-color 150ms ease;
+  box-shadow: var(--su-shadow-sm);
+}
+.su-switch__thumb {
+  width: 20px; height: 20px; border-radius: 50%; background: var(--su-color-foreground);
+  position: absolute; top: 2px; left: 2px; transition: transform 150ms ease, background-color 150ms ease;
+}
+.su-switch__input:checked + .su-switch__track { background: var(--su-color-primary); }
+.su-switch__input:checked + .su-switch__track .su-switch__thumb { transform: translateX(18px); background: var(--su-color-primary-foreground); }
+.su-switch__input:focus-visible + .su-switch__track { box-shadow: 0 0 0 3px color-mix(in oklab, var(--su-color-primary) 25%, transparent); }
+.su-switch__label { user-select: none; }
