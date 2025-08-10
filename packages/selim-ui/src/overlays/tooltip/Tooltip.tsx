@@ -9,7 +9,7 @@ export interface TooltipProps {
 
 export function Tooltip({ content, children }: TooltipProps) {
   return (
-    <span className="su-tooltip" role="button" aria-label={typeof content === 'string' ? content : undefined}>
+    <span className="su-tooltip" aria-label={typeof content === 'string' ? content : undefined}>
       {children}
       <span className="su-tooltip__content" role="tooltip">
         {content}
