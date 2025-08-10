@@ -1,0 +1,54 @@
+name: Canary Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      notes:
+        description: Optional release notes
+        required: false
+  push:
+    branches:
+      - feat/**
+      - fix/**
+      - chore/**
+
+jobs:
+  canary:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+          registry-url: 'https://registry.npmjs.org'
+      - name: Auth npm
+        run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - run: pnpm install --frozen-lockfile=false
+      - name: Enter canary pre mode
+        run: pnpm changeset pre enter canary
+      - name: Version packages
+        run: pnpm changeset version
+      - name: Build packages
+        run: pnpm -r --filter ./packages/* run build
+      - name: Publish canary
+        run: pnpm -r --filter ./packages/* publish --access public --tag canary --no-git-checks
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Exit canary pre mode
+        if: always()
+        run: pnpm changeset pre exit
+      - name: Commit version files
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add -A
+          git commit -m "ci(canary): version bump for canary publish" || echo "No changes to commit"
+          git push || true
