@@ -15,6 +15,9 @@ on:
 jobs:
   canary:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     permissions:
       contents: write
     steps:
@@ -29,8 +32,6 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - name: Auth npm
         run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - run: pnpm install --frozen-lockfile=false
       - name: Enter canary pre mode
         run: pnpm changeset pre enter canary
@@ -40,8 +41,6 @@ jobs:
         run: pnpm -r --filter ./packages/* run build
       - name: Publish canary
         run: pnpm -r --filter ./packages/* publish --access public --tag canary --no-git-checks
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Exit canary pre mode
         if: always()
         run: pnpm changeset pre exit
