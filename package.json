@@ -3,8 +3,8 @@
   "private": true,
   "packageManager": "pnpm@9.0.0",
   "scripts": {
-    "build": "pnpm -r --filter ./packages/* run build",
-    "dev": "pnpm -r --filter @selim-ui/* run dev",
+    "build": "pnpm -r --filter \"./packages/*\" run build",
+    "dev": "pnpm -r --filter \"@selim-ui/*\" run dev",
     "dev:lib": "pnpm -F @selim-ui/react run dev",
     "dev:icons": "pnpm -F @selim-ui/icons run dev",
     "dev:cli": "pnpm -F selimui run dev",
@@ -13,8 +13,8 @@
     "test": "pnpm -r test",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "release": "pnpm -r --filter ./packages/* publish --access public",
-    "release:canary": "changeset pre enter canary && changeset version && pnpm -r --filter ./packages/* publish --access public --tag canary --no-git-checks && changeset pre exit",
+    "release": "pnpm -r --filter \"./packages/*\" publish --access public",
+    "release:canary": "changeset pre enter canary && changeset version && pnpm -r --filter \"./packages/*\" publish --access public --tag canary --no-git-checks && changeset pre exit",
     "prepare": "husky install"
   },
   "lint-staged": {
